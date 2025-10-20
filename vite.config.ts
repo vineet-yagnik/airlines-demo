@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/airlines-demo/',  // 👈 repo name
+  base: '/airlines-demo/',  // must match repo name
 })
