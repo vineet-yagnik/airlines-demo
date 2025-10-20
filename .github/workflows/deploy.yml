@@ -2,7 +2,7 @@ name: Deploy Airlines Demo
 
 on:
   push:
-    branches: [ main ]     # <-- change to your default branch if not 'main'
+    branches: [ master ]     # <-- change to your default branch if not 'main'
   workflow_dispatch:
 
 permissions:
