@@ -2,7 +2,7 @@ name: Deploy Airlines Demo
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]     # <-- change to your default branch if not 'main'
   workflow_dispatch:
 
 permissions:
@@ -19,12 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - run: npm ci
+
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
